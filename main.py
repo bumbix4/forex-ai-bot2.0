@@ -8,7 +8,7 @@ chat_id = os.environ["TELEGRAM_CHAT_ID"]
 
 def get_analysis():
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a professional Forex analyst."},
             {"role": "user", "content": """
