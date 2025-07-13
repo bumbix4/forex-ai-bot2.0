@@ -30,5 +30,10 @@ def send_to_telegram(text):
     requests.post(url, data=payload)
 
 if __name__ == "__main__":
-    analysis = get_analysis()
-    send_to_telegram(analysis)
+    try:
+        analysis = get_analysis()
+        print("✅ ANALYSIS GENERATED:\n", analysis)
+        send_to_telegram(analysis)
+        print("✅ MESSAGE SENT TO TELEGRAM")
+    except Exception as e:
+        print("❌ ERROR:", e)
